@@ -1,0 +1,407 @@
+body{
+                font-family: Arial, Helvetica, sans-serif;
+                height: 100vh;
+                background-color: rgb(31, 31, 33);
+
+
+            }
+            input {
+                border: 1px solid #444;
+                background-color: #2f2f2f;
+                color: white;
+                border-radius: 6px;
+                transition: border-color 0.2s, box-shadow 0.2s;
+                
+            }
+
+            input:focus {
+                outline: none;
+            }
+
+            .container{
+
+                display: flex;
+                flex-direction: row;
+
+            }
+
+            .sidebar{
+                display: flex;
+                position: fixed;
+                top:0;
+                bottom:0;
+                left:0;
+                flex-direction: column;
+                height: 100vh;
+                width: 260px;
+                margin: 0;
+                background-color: rgb(22, 22, 22);
+            }
+            .icons{
+                margin-top: 0;
+                padding-top: 0;
+                display: flex;
+                flex-direction: row;
+                width: 230px;
+                justify-content: space-between;
+                align-items: center;
+                padding-top: 15px;
+                padding-left: 10px;
+            }
+
+            .chatgpt-icon{
+                height: 30px;
+                width: 30px;
+
+            }
+            
+            .sidebar-icon{
+                height: 22px;
+                width: 22px;
+                fill: rgb(154, 154, 154);
+
+            }
+
+            .options{
+                margin-top: 15px;
+                display: flex;
+                flex-direction: column;
+                color: white;
+                font-size: 13px;
+                margin-left: 5px;
+                width: 240px;
+            }
+
+            .user-options{
+                display: flex;
+                flex-direction: row;
+                flex: 1;
+                align-items: center;
+                vertical-align: middle;
+                margin-bottom: 0;
+                cursor: pointer;
+                transition: background-color 0.2s;
+                
+            }
+
+            .user-options:hover{
+
+                background-color: rgb(72, 72, 72);
+                border-radius: 10px;
+               
+            }
+
+             .shortcut {
+                opacity: 0;
+                transition: opacity 0.15s;
+                padding-left: 10px;
+                font-size: 0.9em;
+                color: #b5b5b5;
+            }
+
+            .user-options:hover .shortcut {
+                opacity: 1;
+                font-size: 1.0em;
+
+            }
+
+            .user-options-icon{
+                
+                width: 22px;
+                height: 22px;
+                fill: white;
+                margin-left: 15px;
+
+            }
+
+            .user-options-text{
+                margin-top: 10px;
+                margin-left: 10px;
+            }
+
+            .gpts{
+                display: flex;
+                flex-direction: column;
+                margin-top: 5px;
+
+            }
+
+            .module-text{
+                color: grey;
+                font-size: 15px;
+                margin-left: 15px;
+                margin-bottom: 5px;
+            }
+
+            .chats{
+                display: flex;
+                flex-direction: column;
+                margin-top: 5px;
+
+               
+            }
+
+
+            .chats-text{
+                font-size: 14px;
+                margin-top: 10px;
+                margin-left: 20px;
+                margin-bottom: 10px;
+            }
+
+            .chats-container{
+                display: flex;
+                align-items: center;
+                border-radius: 10px;
+                transition: background-color 0.2s;
+                cursor: pointer;
+                
+            }
+
+            .chats-text:hover{
+
+                background-color: rgb(72, 72, 72);
+                border-radius: 10px;
+            
+               
+            }
+
+
+            .account-details {
+                display: flex;
+                flex-direction: row;
+                align-items: center; /* vertically center children */
+                flex: 1;
+            }
+
+            .account-status {
+                display: flex;
+                flex-direction: column;
+                justify-content: center; /* vertical centering */
+                margin-left: 20px;
+                gap: 2px; /* optional small spacing between name and tier */
+            }
+            .profile-picture{
+                background-color: #0169CC;
+                height: 25px;
+                width: 25px;
+                border: none;
+                border-radius: 13px;
+                color: white;
+                margin-left: 10px;
+            }
+
+
+            .account-name{
+                color: white;
+                width: 100px;
+                
+            }
+
+            .account-tier{
+                color: grey;
+            }
+
+            .account-upgrade-button{
+                color: white;
+                border-width: 1px;
+                border-color: white;
+                background-color: rgb(22, 22, 22);
+                border-radius: 20px;
+                border-style: solid;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                padding-left: 10px;
+                padding-right: 10px;
+                margin-left: 15px;
+            }
+
+            .chat-area{
+                display: flex;
+                flex-direction: column;
+                margin-left: 250px; /* same as sidebar width */
+                margin-top: 0;
+                padding: 0;
+                padding: 20px;
+                flex: 1; /* take remaining horizontal space */
+                min-height: 100vh;
+                color: white;
+                justify-content: flex-start;
+                padding-top: 0px;
+                padding-left: 10px;
+            }
+
+            .chat-chatgpt-button,.chat-share-button{
+                color: white;
+                background-color: rgb(31, 31, 33);
+                border-color: rgb(31, 31, 33);
+                border-style: solid;
+                text-align: center;
+                margin-top: 0px;
+                font-size: 18px;
+                
+            }
+
+            .chat-chatgpt-button:hover,.chat-share-button:hover{
+                
+                border-radius: 10px;
+                background-color: rgb(72, 72, 72);
+                padding-top: 10px;
+                padding-bottom: 10px;
+                padding-left: 5px;
+                padding-right: 5px;
+                cursor: pointer;
+            }
+
+           .chat-top-section {
+                display: flex;
+                flex-direction: row;
+                align-items: center; 
+                justify-content: space-between;
+                height: 60px;
+                padding: 0 10px;
+                gap: 10px;
+            }
+
+            .chat-top-left {
+                display: flex;
+                align-items: center; 
+            }
+
+            .chat-top-middle {
+                display: flex;
+                flex: 1;
+                align-items: center; 
+                justify-content: center; 
+            }
+
+            .chat-top-right {
+                display: flex;
+                align-items: center; 
+                justify-content: flex-end; 
+                gap: 10px;
+            }
+
+            .chat-upgrade-button {
+                background-color: rgb(181, 110, 220);
+                position: fixed;
+                width: 140px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                padding-left: 10px;
+                padding-right: 10px;
+                text-align: center;
+                border: none;
+                border-radius: 20px;
+                color: white;
+                cursor: pointer;
+                
+            }
+
+            .chat-options-button {
+                background-color: transparent;
+                border: none;
+                padding: 0; 
+            }
+
+            .chat-options-icon {
+                height: 20px;
+                width: 20px;
+                margin-top: 5px;
+                fill: white;
+            }
+
+            .chat-middle-section{
+                margin-top: 120px;
+            }
+
+            .chat-middle-center{
+                display: flex;
+                flex:1;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .chat-caption{
+                font-size: 45px;
+            }
+
+            .chat-bottom-section {
+                display: flex;
+                flex-direction: row;
+                gap: 20px;                
+                padding: 10px 15px;  
+                padding-top: 20px;
+                padding-bottom: 20px;      
+                background-color: rgb(48, 48, 48); 
+                border-radius: 30px;
+                width: 65%; 
+                height: 30px;               
+                margin: 0 auto;
+                
+            }
+
+            .chat-upload-button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-top: -6px;
+                background-color: rgb(48, 48, 48);
+                border: none;
+                border-radius: 50%;
+                height: 40px;
+                width: 40px;
+                padding: 0;
+                cursor: pointer;
+                transition: background-color 0.2s ease;
+            }
+
+            
+            .chat-upload-button:focus {
+                outline: none;
+            }
+
+            .chat-upload-button:hover {
+                background-color: rgb(72, 72, 72);
+            }
+
+            
+            .chat-upload-icon {
+                width: 20px;
+                height: 20px;
+                fill: white;
+            }
+            
+
+            .chat-bottom-middle{
+                display: flex;
+                flex: 1;
+                
+
+            }
+
+            .chat-input-text{
+                background-color: transparent;
+                color: white;
+                border: none;
+                flex: 1;
+            }
+
+            .chat-input-text::placeholder {
+                font-size: 16px;        
+                color: #888888;         
+                    
+            }
+            .chat-bottom-right{
+                align-items: flex-end;
+            }
+            .chat-voice-mode-toggle{
+                margin-top: -5px;
+                background-color: rgb(89, 88, 88);
+                border: none;
+                height: 40px;
+                width: 40px;
+                border-radius: 20px;
+                
+                
+            }
